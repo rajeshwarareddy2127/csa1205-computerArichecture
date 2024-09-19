@@ -1,0 +1,22 @@
+#include<stdio.h>
+#include<math.h>
+
+int convertDecimalTooctal(int decimalnumber){
+	int octalnumber=0,i=1;
+	while(decimalnumber!=0) {
+		octalnumber+=(decimalnumber%8)*i;
+		decimalnumber/=8;
+		i*=10;
+	}
+	return octalnumber;
+}
+
+int main(){
+	int decimalnumber,result;
+	printf("enter the decimal number:");
+	scanf("%d",&decimalnumber);
+	result=convertDecimalTooctal(decimalnumber);
+	printf("%d",result);
+	printf("%d in decimal= %d in octal",decimalnumber,result);
+	return 0;
+}
